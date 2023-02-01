@@ -1,0 +1,30 @@
+{% extends 'jobs/index.html' %} 
+{% block content %}
+
+
+<div>
+    <a href="/inbox">
+        <button type="button" class="btn btn-primary position-relative">
+            Inbox
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-danger">
+                99+
+                <span class="visually-hidden">unread messages</span>
+            </span>
+        </button>
+    </a>
+</div>
+<hr>
+<h1>Click on a name to Mesage them!</h1>
+
+<ul class="list-group">    
+    {% for account in account_list %}
+    <li class="list-group-item">
+        <form action="{% url 'jobs:messageForm' pk=account.id %}" method="post">
+            {% csrf_token %}
+            <label class="form-label"><strong>Name:</strong> {{account.first_name}} {{account.last_name}}</label>
+            <button type="submit" class="btn btn-primary">Message</button>
+        </form>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

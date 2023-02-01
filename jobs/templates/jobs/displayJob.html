@@ -1,0 +1,27 @@
+{% extends 'jobs/index.html' %} 
+
+{% block content %}
+
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="pb-3 h5">Title: {{job.title}}</div>
+        <div class="pb-3 h5">Employer: {{job.employer}}</div>
+        <div class="pb-3 h5">location: {{job.location}}</div>
+        <div class="pb-3 h5">salary: {{job.salary}}</div>
+        <div class="pb-3 h5">postedBy: {{poster.first_name}} {{poster.last_name}}</div>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+                <b> Job Description:</b> 
+                {{job.description}}
+        </div>
+    </div>
+</div> 
+
+<div class="w3-green w3-hover-shadow w3-center">
+
+    <button class="w3-button w3-green"><a href = "{% url 'jobs:jobs' %}">Return to Job Listings</a></button>
+
+</div>
+
+
+{% endblock %} 

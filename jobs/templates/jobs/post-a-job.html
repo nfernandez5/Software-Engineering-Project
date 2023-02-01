@@ -1,0 +1,12 @@
+{% extends 'jobs/index.html' %} 
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+</div>
+{% endblock %}

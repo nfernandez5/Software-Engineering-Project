@@ -1,0 +1,113 @@
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'jobs/style.css' %}">
+    <title>Incollege Montana</title>
+</head>
+
+{% block content %}
+{% include "jobs/nav.html" %}
+
+<p1 style ="color:#2B68D3; text-align: left; font-size : 20px; padding:30px; padding-top: 30px;"><i>
+  
+  Congratulation on your first step! Now it's time for you to pick between two options of account that InCollege provide...</i></p1>
+
+
+
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 70%;
+  border: 1px solid #ddd;
+}
+
+table.center {
+  margin-left: auto;
+  margin-right:auto
+}
+th, td {
+  text-align: center;
+  padding: 16px;
+}
+
+th:first-child, td:first-child {
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+.fa-check {
+  color: green;
+}
+
+.fa-remove {
+  color: red;
+}
+</style>
+</head>
+<body>
+
+<h2 style ="padding: 20px;">Want to see the comparison between Plus and Standard option?</h2>
+
+<table class="center">
+  <tr>
+    <th style="width:50%">Features</th>
+    <th>Standard</th>
+    <th>Plus</th>
+  </tr>
+  <tr>
+    <td>Send message to your friends</td>
+    <td><i class="fa fa-check"></i></td>
+    <td><i class="fa fa-check"></i></td>
+  </tr>
+  <tr>
+    <td>Send message to ANYONE!</td>
+    <td><i class="fa fa-remove"></i></td>
+    <td><i class="fa fa-check"></i></td>
+  </tr>
+  <tr>
+    <td>Monthly subscription 10$</td>
+    <td><i class="fa fa-remove"></i></td>
+    <td><i class="fa fa-check"></i></td>
+  </tr>
+</table>
+
+</body>
+</html>
+
+<div class="container">
+  <h5>Which account would you like to get?</h5>
+  <form action="{% url 'jobs:accountSelection'%}" method="post">
+      {% csrf_token %}
+      <div class="input-group">
+          <select name="choice" class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+
+          <option name="choice" value="Standard">Standard</option>
+          <option name="choice" value="Plus">Plus</option>
+          </select>
+          <input class="btn btn-outline-secondary" type="submit" value="Save" />
+      </div>
+  </form>
+  <hr />
+
+  
+</div>
+
+{% endblock %}

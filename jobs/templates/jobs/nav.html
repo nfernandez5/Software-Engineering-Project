@@ -1,0 +1,264 @@
+
+{% if user.is_authenticated %}
+<nav class="navbar navbar-expand-lg navbar-light .bg-light.bg-gradient">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="/">InCollege</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a  class="nav-link" href="/profile">Profile</a> 
+				</li>
+				<li class="nav-item">
+					<a  class="nav-link" href="/job-section">Jobs and Internships</a>
+				</li>
+				<li class="nav-item">
+					<a  class="nav-link" href="/connect-section">Connections</a>
+				</li>
+				<li class="nav-item">
+					<a  class="nav-link" href="/skill-section">Skills</a>
+				</li>
+				<li class="nav-item">
+					<a  class="nav-link" href="/messages">Messaging</a>
+				</li>
+	<!-- dropdown -->
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Useful Links
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<!-- dropdown -->
+						<li>
+							<a class="dropdown-item" href="#">General &raquo;</a>
+							<ul class="dropdown-menu dropdown-submenu dropdown-submenu-right">
+								<li>
+									<a class="dropdown-item" href="/register/">Sign Up</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="/general/help-center">Help Center</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="/general/about">About</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="/general/press">Press</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="/general/blog">Blog</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="/general/careers">Careers</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="/general/developers">Developers</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a class="dropdown-item" href="/browse-incollege/">Browse InCollege</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="/business-solutions/">Business Solutions</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="/directories/">Directories</a>
+						</li>
+					</ul>
+				</li>
+
+				<!-- dropdown -->
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Incollege important Links
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<li>
+							<a class="dropdown-item"  href="/important/copyright">A Copyright Notice</a>
+						</li>
+						<li>
+							<a class="dropdown-item"  href="/important/about">About</a>
+						</li>
+						<li>
+							<a class="dropdown-item"  href="/important/accessibility">Accessibility</a>
+						</li>
+						<li>
+							<a class="dropdown-item"  href="/important/user-agreement">User Agreement</a>
+						</li>
+						<!-- dropdown/dropdown -->
+						<li>
+							<a class="dropdown-item"  href="#">Privacy Policy &raquo;</a>
+							<ul class="dropdown-menu dropdown-submenu dropdown-submenu-rigth">					<li>
+									<a class="dropdown-item" href="/important/emails">Email Settings</a>
+								</li>
+								<li>
+								<a class="dropdown-item" href="/important/sms">SMS Settings</a>
+								</li>
+								<li>
+								<a class="dropdown-item" href="/important/ads">Targeted Ads Settings</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a class="dropdown-item"  href="/important/cookie">Cookie Policy</a>
+						</li>
+						<li>
+							<a class="dropdown-item"  href="/important/copyright">Copyright Policy</a>
+						</li>
+						<li>
+							<a class="dropdown-item"  href="/important/brand">Brand Policy</a>
+						</li>
+						<li>
+							<a class="dropdown-item"  href="/friends">Friends</a>
+						</li>
+						<li>
+							<a class="dropdown-item"  href="/important/language">Languages</a>
+						</li>
+					</ul>
+				</li>
+				
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Text Files</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<li>
+							<a class="dropdown-item" href="/job_text">MyCollege Jobs</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="/profiles_text">MyCollege Profiles</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="/users_text">MyCollege Users</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="/training_text">MyCollege Training</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="/appliedJobs_text">MyCollege Applied Jobs</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="/savedJobs_text">my College Saved Jobs</a>
+						</li>
+					</ul>
+				</li>
+				
+				<li class="nav-item">
+					<a class="nav-link" href="/logout">Logout</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+{%else%}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#">InCollege</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a  class="nav-link" href="/login">Login</a> 
+				</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/connect-section">Find a Connection</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					Useful Links
+				</a>
+				<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<!-- dropdown -->
+					<li>
+						<a class="dropdown-item" href="#">General &raquo;</a>
+						<ul class="dropdown-menu dropdown-submenu dropdown-submenu-right">
+							<li>
+								<a class="dropdown-item" href="/register/">Sign Up</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="/general/help-center">Help Center</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="/general/about">About</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="/general/press">Press</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="/general/blog">Blog</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="/general/careers">Careers</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="/general/developers">Developers</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a class="dropdown-item" href="/browse-incollege/">Browse InCollege</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="/business-solutions/">Business Solutions</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="/directories/">Directories</a>
+					</li>
+				</ul>
+			</li>
+
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					Incollege important Links
+				</a>
+				<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<li>
+						<a class="dropdown-item"  href="/important/copyright">A Copyright Notice</a>
+					</li>
+					<li>
+						<a class="dropdown-item"  href="/important/about">About</a>
+					</li>
+					<li>
+						<a class="dropdown-item"  href="/important/accessibility">Accessibility</a>
+					</li>
+					<li>
+						<a class="dropdown-item"  href="/important/user-agreement">User Agreement</a>
+					</li>
+					<!-- dropdown/dropdown -->
+					<li>
+						<a class="dropdown-item"  href="#">Privacy Policy &raquo;</a>
+						<ul class="dropdown-menu dropdown-submenu dropdown-submenu-rigth">					<li>
+								<a class="dropdown-item" href="/important/emails">Email Settings</a>
+							</li>
+							<li>
+							<a class="dropdown-item" href="/important/sms">SMS Settings</a>
+							</li>
+							<li>
+							<a class="dropdown-item" href="/important/ads">Targeted Ads Settings</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a class="dropdown-item"  href="/important/cookie">Cookie Policy</a>
+					</li>
+					<li>
+						<a class="dropdown-item"  href="/important/copyright">Copyright Policy</a>
+					</li>
+					<li>
+						<a class="dropdown-item"  href="/important/brand">Brand Policy</a>
+					</li>
+					<li>
+						<a class="dropdown-item"  href="/friends">Friends</a>
+					</li>
+					<li>
+						<a class="dropdown-item"  href="/important/language">Languages</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		</div>
+	</div>
+</nav>
+  {%endif%}
+

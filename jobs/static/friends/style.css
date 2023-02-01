@@ -1,0 +1,16 @@
+.friends-container {
+    min-height: 100vh;
+}
+
+.primary-text {
+    color: #0077B5;
+}
+
+.pending-friend-card, .existing-friend-card {
+    box-shadow: 6px 7px 10px rgb(0, 0, 0, 0.34);
+    margin: 15px;
+}
+
+a {
+    text-transform: unset;
+}

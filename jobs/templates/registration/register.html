@@ -1,0 +1,15 @@
+{% extends 'jobs/index.html' %} 
+
+{% block title %}Create an Account{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>
+{% endblock %} 

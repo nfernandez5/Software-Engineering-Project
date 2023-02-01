@@ -1,0 +1,16 @@
+{% extends 'jobs/index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="row justify-content-center">
+    <h1>Send Message to {{receiver.user}}</h1>
+</div>
+<div class="d-flex justify-content-center">
+    <form action="{% url 'jobs:ProcessMessage' pk=receiver.id %}" method="post">
+        <div class="mb-3">
+            <label  class="form-label" for="content">Message content</label>
+            <input required class="form-control"type="text" id="content" name="content">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}  

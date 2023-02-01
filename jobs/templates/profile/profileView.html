@@ -1,0 +1,77 @@
+{% extends 'jobs/index.html' %} 
+
+{% block content %}
+
+{% if profile %}
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="pb-3 h5">Title: {{profile.title}}</div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+                    <b> About Me:</b> 
+                    {{profile.about}}
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <h1 style = " font-size:40px">Education</h1>
+            <p>University: {{profile.university}}</p>
+            <p>Major: {{profile.major}}</p>
+            <p>Degree: {{profile.degree}}</p>
+            <p>Years Attended: {{profile.yearsAttended}}</p>
+
+            {% if not is_friend %}
+            <a href="/profile/edit">Edit Profile?</a>
+            {% endif %}
+
+        <p></p>
+        <h1 style = " font-size:40px">Work Experiences</h1>
+        {% for experience in experiences %}
+        <div class="col">
+        <div class="card shadow-sm">
+            <h4><b>
+                Title: {{ experience.title }}
+            </b></h4>
+            <div class="card-body">
+            <p class="card-text">
+                Employer: {{ experience.employer }}
+            </p>
+            <p>Location: {{ experience.location }}</p>
+            <p>{{experience.description}}</p>
+            <p>{{ experience.dateStarted }} - {{ experience.dateEnded }}</p>
+            </div>
+        </div>
+        </div>
+        {% endfor %}
+
+    <p></p>
+    {% if not is_friend %}
+    <a href="/profile/addJob">Add Work Experience</a>
+    {% endif %}
+    </div>
+
+{% else %}
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                <strong>Remember!</strong> Don't forget to create a profile!
+            </div>
+
+            <a href="/profile/edit">Create Profile?</a>
+        </div>
+    </div>
+
+    <div class="container">
+
+    </div>
+    </html>
+
+{% endif %}
+
+
+
+{% endblock %} 
